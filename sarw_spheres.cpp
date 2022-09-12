@@ -131,7 +131,6 @@ PyObject* generateChain(PyObject* self, PyObject* args)
     std::vector<double> sizes;
 
     do {
-        printf("%.2lf\n",**dataptr);
         sizes.push_back(**dataptr);
     } while (iternext(iter));
 
