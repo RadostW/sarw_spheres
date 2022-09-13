@@ -10,7 +10,7 @@ with open('README.md') as f:
 
 setup(
     name="sarw_spheres",
-    version="0.0.4",
+    version="0.0.5",
     
     url='https://github.com/RadostW/sarw_spheres',
     author='Radost Waszkiewicz',

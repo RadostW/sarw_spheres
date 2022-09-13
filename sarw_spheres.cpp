@@ -94,7 +94,7 @@ PyMODINIT_FUNC PyInit_sarw_spheres(void)
 
     Py_Initialize();
     PyObject* pModule = PyModule_Create(&ModuleDefinitions);
-    PyModule_AddObject(pModule, "version", Py_BuildValue("s", "version 0.0.4"));
+    PyModule_AddObject(pModule, "version", Py_BuildValue("s", "version 0.0.5"));
     return pModule;
 }
 
