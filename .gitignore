@@ -1,0 +1,17 @@
+.*
+venv
+*.pyc
+.png
+.so
+
+bin/
+build/
+dist/
+lib64
+pyvenv.cfg
+
+*.egg-info
+
+*.png
+!docs/**/*.png
+
