@@ -39,9 +39,9 @@ PyArrayObject* RectangularArrayFromDoubles(double *data, int XSIZE, int YSIZE)
         std::cerr << "Could not create np.array." << std::endl;
         //return -1;
     }
-    PyArrayObject *np_arr = reinterpret_cast<PyArrayObject*>(pArray);
+    PyArrayObject *np_arr = reinterpret_cast<PyArrayObject*>(pArray);    
+    PyArray_ENABLEFLAGS(np_arr, NPY_ARRAY_OWNDATA);
     
-    delete[] c_arr;
     return np_arr;
 }
 
