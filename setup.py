@@ -1,17 +1,25 @@
-from distutils.core import setup, Extension
+import setuptools
+import numpy
 
-sarw_spheres = Extension(
+cpp_args = ['-std=c++11']
+
+numpy_includes = numpy.get_include()
+
+sarw_spheres = setuptools.Extension(
     "sarw_spheres",
     sources=["sarw_spheres.cpp"],
+    language="c++",
+    extra_compile_args=cpp_args,
+    include_dirs=[numpy_includes]
 )
 
 with open('README.md') as f:
     long_description = f.read()
 
-setup(
+setuptools.setup(
     name="sarw_spheres",
-    version="0.0.5",
-    
+    version="0.0.8",
+
     url='https://github.com/RadostW/sarw_spheres',
     author='Radost Waszkiewicz',
     author_email='radost.waszkiewicz@gmail.com',
@@ -22,8 +30,9 @@ setup(
       'Source': 'https://github.com/RadostW/sarw_spheres'
     },
     license='MIT',
-    
+
     description="Genrate self avoiding random walks (SARW) for spheres of given sizes.",
     ext_modules=[sarw_spheres],
     install_requires=['numpy>1.16'],
+    include_dirs=[numpy_includes],
 )

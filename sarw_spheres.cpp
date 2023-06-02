@@ -23,9 +23,9 @@ PyArrayObject* RectangularArrayFromDoubles(double *data, int XSIZE, int YSIZE)
 {
     npy_intp dims[2]{XSIZE, YSIZE};
     const int ND = 2;
-    
+
     double *c_arr = new double[XSIZE*YSIZE];
-    
+
     for (int i = 0; i < XSIZE; i++)
         for (int j = 0; j < YSIZE; j++)
             c_arr[YSIZE*i+j] = data[YSIZE*i+j];
@@ -94,7 +94,7 @@ PyMODINIT_FUNC PyInit_sarw_spheres(void)
 
     Py_Initialize();
     PyObject* pModule = PyModule_Create(&ModuleDefinitions);
-    PyModule_AddObject(pModule, "version", Py_BuildValue("s", "version 0.0.5"));
+    PyModule_AddObject(pModule, "version", Py_BuildValue("s", "version 0.0.6"));
     return pModule;
 }
 

@@ -1,14 +1,14 @@
 #ifndef GENERATOR_CC
 #define GENERATOR_CC
 
-#if __has_include(<span>)
-    #include <span>
-#else
-     #include "span.cc" // UGLY TEMPORARY HACK UNTIL YOUR CURRENT C++ COMPILER INCLUDES std::span SUPPORT
-    namespace std { 
+//#if __has_include(<span>)
+//    #include <span>
+//#else
+    #include "span.cc" // UGLY TEMPORARY HACK UNTIL YOUR CURRENT C++ COMPILER INCLUDES std::span SUPPORT
+    namespace std {
         using tcb::span;
     }
-#endif
+//#endif
 
 #include "Point.cc"
 #include "Utils.cc"
